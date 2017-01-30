@@ -19,9 +19,9 @@ public class EmployeeController {
   private EmployeeService employeeService;
 
   @RequestMapping("/show/{clave}")
-  public String showID(Model model) {
-    String id = {clave};
-    model.addAttribute("idContact",employeeService.show(id));
+  public String showID(@PathVariable String clave, Model model) {
+    model.addAttribute("idContact",employeeService.show(clave));
+    //model.addAttribute("idContact",clave);
     return "viewContact";
   }
   

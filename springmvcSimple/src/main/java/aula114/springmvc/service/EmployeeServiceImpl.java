@@ -43,6 +43,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Contact show(String id) {
         //  Se obtiene desde MySQL
 		Contact c = new Contact();
+
+		String sql = "select name, email, address, telephone from contact where contact_id = ?";
+  		
+		c = jdbcTemplate.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper<Contact>(Contact.class));
+
         return c;
 	}
 

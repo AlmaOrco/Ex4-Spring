@@ -4,6 +4,10 @@
 <head>
 </head>
 <body>
-	<h1>Aquí deberían aparecer los datos del contacto.</h1>
+	<h1>Aqui deberian aparecer los datos del contacto.</h1>
+	<h3>${idContact.name}</h3>
+	<p>${idContact.email}</p>
+	<p>${idContact.address}</p>
+	<p>${idContact.telephone}</p>
 </body>
 </html>
