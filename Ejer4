@@ -1,0 +1,16 @@
+En principio, basta con cambiar los datos en el fichero database.properties para que el ejercicio 2 pueda trabajar con Postgresql.
+
+Requiere ejecutar el ejercicio 1 adaptándolo a Postgresql, así como ejecutar el script dado, con algunas adaptaciones también:
+
+CREATE DATABASE db1;
+
+CREATE TABLE contact (
+  contact_id integer NOT NULL,
+  name varchar(45) NOT NULL,
+  email varchar(45) NOT NULL,
+  address varchar(45) NOT NULL,
+  telephone varchar(45) NOT NULL,
+  PRIMARY KEY (contact_id)
+);
+
+He tenido problemas para probarlo, porque no recordaba la contraseña de Postgresql para incluirla en el ejercicio 1, así como en el database.properties del ejercicio 2.
