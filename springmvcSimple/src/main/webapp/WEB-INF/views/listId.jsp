@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Fixed Deposit list</title>
+<title>Spring simple Example using JdbcTemplate</title>
 <style type="text/css">
 .border {
 	border-width: 1px;
@@ -23,32 +23,14 @@
 </style>
 </head>
 <body>
-	<form name="idList" method="POST"
-		action="${pageContext.request.contextPath}/show}">
-		<table align="left" style="padding-left: 300px;">
-			<tr>
-				<td
-					style="font-family: 'arial'; font-size: 16px; font-weight: bold;">Fixed
-					deposit list</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>
-					<table class="border" cellpadding="10">
-						<tr bgcolor="#99CCFF">
-						  <th class="th">ID</th>
-						</tr>
-						<c:forEach items="${idList}" var="id">
-							<tr>
-								<td class="td"><a href="${pageContext.request.contextPath}/show/${id}"><c:out value="${id}" /></a></td>
-							</tr>
-						</c:forEach>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</form>
+     <h3>Lista de identificativos de Contactos</h3>
+      <p>
+     <select name="clave" onChange="window.location.href=this.value">
+       <option value="">Selecciona uno</option>
+      <c:forEach var="item" items="${idList}">
+       <option value="/show/${item}">${item}</option>
+      </c:forEach>
+     </select>
+    </p>
 </body>
 </html>
