@@ -51,5 +51,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         return c;
 	}
 
+	public Contact delete(String id) {
+		//TODO
+		return null;
+	}
 
+	public Contact edit(String id) {
+		//TODO
+		return null;
+	}
 }
