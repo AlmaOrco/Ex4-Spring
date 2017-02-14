@@ -1,0 +1,4 @@
+13-02-2017
+==========
+Vamos a ampliar la funcionalidad de la aplicación completando la CRUD con los pasos definidos en Github(issues) y en habitica.
+En bd correrá con mysql (por problemas para ejecutar el otro programa con Postgres). Ya veremos, una vez terminada la crud, eliminaremos la parte de redis, y trabajaremos la migración postgres database.properties mediante.

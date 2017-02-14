@@ -8,5 +8,7 @@ public interface EmployeeService {
 
 	public List<String> listIdEmployee();
 	public Contact show(String id);
+	public String delete(String id);
+	public Contact edit(String id);
 	
 }

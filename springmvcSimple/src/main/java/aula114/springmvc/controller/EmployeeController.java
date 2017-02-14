@@ -22,23 +22,19 @@ public class EmployeeController {
   public String showID(@PathVariable String clave, Model model) {
     model.addAttribute("idContact",employeeService.show(clave));
     model.addAttribute("id",clave);
-    //model.addAttribute("idContact",clave);
     return "viewContact";
   }
 
-  @RequestMapping("/delete/{clave}")
+  @RequestMapping("/show/delete/{clave}")
   public String deleteID(@PathVariable String clave, Model model) {
-    model.addAttribute("idContact",employeeService.delete(clave));
-    model.addAttribute("id",clave);
-    //model.addAttribute("idContact",clave);
-    return "viewContact";
+    model.addAttribute("id",employeeService.delete(clave));
+    return "listId";
   }
 
   @RequestMapping("/edit/{clave}")
   public String editID(@PathVariable String clave, Model model) {
     model.addAttribute("idContact",employeeService.edit(clave));
     model.addAttribute("id",clave);
-    //model.addAttribute("idContact",clave);
     return "viewContact";
   }
   

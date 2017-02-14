@@ -12,7 +12,7 @@
 		<p>${idContact.telephone}</p>
 	</div>
 	<div>
-		<form method="POST">
+		<form method="POST" accept-charset='utf-8'>
 			
 			<button onClick="window.location.href='edit/${id}'">Edit</button>
 			<button onClick="window.location.href='delete/${id}'">Delete</button>

@@ -6,13 +6,16 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Set;
+import java.util.Map;
+import java.util.HashMap;
 
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import aula114.springmvc.domain.Contact;
 
@@ -29,13 +32,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public List<String> listIdEmployee() {
-        //  Se obtiene desde Redis
-        String KEY = "Contact"; //Tomado del proyecto springLoadDataRedis
-	    Set<Object> list = redisTemplate.opsForHash().keys(KEY);
-	    
-		ArrayList<String> idList1 = new ArrayList(list);
+        //  Cambiamos la obtención de datos de Redis a MySQL
+        String sql = "select contact_id from contact";
+  		List idList1 = jdbcTemplate.queryForList(sql);
 
-	    idList = idList1;
+  		List list = new ArrayList();
+        for (Object item : idList1) {
+            HashMap map = (HashMap) item;
+        	String id = map.get("contact_id").toString();
+        	list.add(id);
+		}
+
+		idList = new ArrayList<String>(list);
+
         return idList;
 	}
 
@@ -51,11 +60,26 @@ public class EmployeeServiceImpl implements EmployeeService {
         return c;
 	}
 
-	public Contact delete(String id) {
+	@Override
+	public String delete(String id) {
 		//TODO
-		return null;
+		String sql = "delete from contact where contact_id = " + id;
+  		int success = 0;
+  		try{
+  			success = jdbcTemplate.update(sql);
+  		} catch(EmptyResultDataAccessException e){
+  			System.out.println(e.toString());
+  		} finally{
+
+	  		if(success != 0){
+	        	return id;
+	   		}
+  		}
+
+        return null;
 	}
 
+	@Override
 	public Contact edit(String id) {
 		//TODO
 		return null;
