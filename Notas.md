@@ -10,5 +10,6 @@ Conseguido hoy:
 + Ya no depende de Redis, sino que toma los datos directamente de mysql (incluso los de la pantalla que sólo lista las id).
 
 Problemas:
-+ Problemas para conseguir que jdbcTemplate devuelva un entero con las filas afectadas (previsiblemente 1).
-    - Probaremos sin comprobar si devuelve int.
+~~Problemas para conseguir que jdbcTemplate devuelva un entero con las filas afectadas (previsiblemente 1)~~.
+  ~~Probaremos sin comprobar si devuelve int~~.
+    Corregido Delete.
