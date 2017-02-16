@@ -14,7 +14,7 @@
     </c:forEach>
     </select>
     <form method="POST" accept-charset='utf-8'>
-			<button onClick="window.location.href='show'">Listar todos</button>
+			<button onClick="window.location.href='/show'">Listar todos</button>
     </form>
 	
 	<c:if test="${not empty id}">

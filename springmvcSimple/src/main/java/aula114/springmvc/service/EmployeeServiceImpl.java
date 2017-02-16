@@ -64,19 +64,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public String delete(String id) {
 		//TODO
 		String sql = "delete from contact where contact_id = " + id;
-  		int success = 0;
-  		try{
-  			success = jdbcTemplate.update(sql);
-  		} catch(EmptyResultDataAccessException e){
-  			System.out.println(e.toString());
-  		} finally{
+  		jdbcTemplate.update(sql);
 
-	  		if(success != 0){
-	        	return id;
-	   		}
-  		}
-
-        return null;
+        return id;
 	}
 
 	@Override

@@ -25,9 +25,10 @@ public class EmployeeController {
     return "viewContact";
   }
 
-  @RequestMapping("/show/delete/{clave}")
+  @RequestMapping("/delete/{clave}")
   public String deleteID(@PathVariable String clave, Model model) {
     model.addAttribute("id",employeeService.delete(clave));
+    this.listId(model);
     return "listId";
   }
 
@@ -40,6 +41,7 @@ public class EmployeeController {
   
   @RequestMapping("/show")
   public String show() {
+    //TODO
     return "viewAll";
   }
   
