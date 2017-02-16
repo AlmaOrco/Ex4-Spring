@@ -27,14 +27,6 @@
      <value>.jsp</value>
    </property>
   </bean>
-  <bean id="jedisConnFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-        p:host-name="localhost" p:port="6379" />
-
-         <!-- redis template definition -->
-   <bean id="redisTemplate" 
-         class="org.springframework.data.redis.core.RedisTemplate" 
-         p:connection-factory-ref="jedisConnFactory"/>
-
    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
          <property name="dataSource" ref="dataSource" />
    </bean>

@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-import org.springframework.data.redis.core.ListOperations;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +21,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
-	@Autowired
-    private RedisTemplate<String, String> redisTemplate;
 	
 	private List<String> idList = new ArrayList<String>();
 
